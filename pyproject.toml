@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scratchlm"
+version = "0.1.0"
+description = "Transformers (encoder-decoder and GPT-2 style) and n-gram language models, implemented from scratch."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Girish GH" }
+]
+dependencies = [
+    "torch>=1.13",
+]
+
+[project.optional-dependencies]
+pretrained = ["transformers>=4.30"]
+
+[tool.setuptools.packages.find]
+include = ["scratchlm*"]
+
+[tool.setuptools.package-data]
+"scratchlm.ngram" = ["data/*.txt"]
